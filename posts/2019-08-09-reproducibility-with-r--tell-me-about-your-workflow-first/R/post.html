@@ -1,0 +1,60 @@
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+<p><strong>Table of Contents</strong></p>
+<ul>
+<li><a href="#load-packages">Load packages</a>
+<ul>
+<li><a href="#external-packages">External packages</a></li>
+<li><a href="#custom-packages">Custom packages</a></li>
+</ul></li>
+<li><a href="#this-is-blog-post-template">This is blog post template</a>
+<ul>
+<li><a href="#call-custom-package">Call custom package</a></li>
+<li><a href="#plot">Plot</a></li>
+<li><a href="#extra-text">Extra text</a></li>
+<li><a href="#emoticons">Emoticons</a></li>
+<li><a href="#sysinfo">Sysinfo</a></li>
+</ul></li>
+</ul>
+<!-- markdown-toc end -->
+<h1 id="load-packages">Load packages</h1>
+<h2 id="external-packages">External packages</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(data.table)</a></code></pre></div>
+<pre><code>## Warning: package &#39;data.table&#39; was built under R version 3.6.1</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">library</span>(mgcv)</a></code></pre></div>
+<pre><code>## Warning: package &#39;mgcv&#39; was built under R version 3.6.1</code></pre>
+<pre><code>## Loading required package: nlme</code></pre>
+<pre><code>## Warning: package &#39;nlme&#39; was built under R version 3.6.1</code></pre>
+<pre><code>## This is mgcv 1.8-28. For overview type &#39;help(&quot;mgcv-package&quot;)&#39;.</code></pre>
+<p>I just loaded external pkgs.</p>
+<h2 id="custom-packages">Custom packages</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">library</span>(postpkg)</a></code></pre></div>
+<p>I just loaded custom pkg.</p>
+<h1 id="this-is-blog-post-template">This is blog post template</h1>
+<h2 id="call-custom-package">Call custom package</h2>
+<p>I can call a custom function <code>hello</code> from a custom pkg <code>postpkg</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">postpkg<span class="op">::</span><span class="kw">hello</span>(<span class="st">&quot;World!&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;Hello World!&quot;</code></pre>
+<p>This is an exemplary text</p>
+<h2 id="plot">Plot</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">plot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>)</a></code></pre></div>
+<p><img src="img/reproducibility-with-r--tell-me-about-your-workflow-first-simple_plot-1.png" /><!-- --></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">plot</span>(<span class="kw">seq</span>(<span class="dt">from =</span> <span class="op">-</span>pi, <span class="dt">to =</span> pi, <span class="dt">by =</span> <span class="fl">0.1</span>),</a>
+<a class="sourceLine" id="cb12-2" title="2">     <span class="kw">cos</span>(<span class="kw">seq</span>(<span class="dt">from =</span> <span class="op">-</span>pi, <span class="dt">to =</span> pi, <span class="dt">by =</span> <span class="fl">0.1</span>)))</a></code></pre></div>
+<p><img src="img/reproducibility-with-r--tell-me-about-your-workflow-first-unnamed-chunk-2-1.png" /><!-- --></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">image</span>(volcano)</a></code></pre></div>
+<p><img src="img/reproducibility-with-r--tell-me-about-your-workflow-first-volcano_plot-1.png" /><!-- --></p>
+<h2 id="extra-text">Extra text</h2>
+<p>This is extra text. This is another extra text.</p>
+<p>This is one more extra text. This is one more additional extra text.</p>
+<h2 id="emoticons">Emoticons</h2>
+<p>:smile:</p>
+<h2 id="sysinfo">Sysinfo</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">Sys.info</span>()</a></code></pre></div>
+<pre><code>##        sysname        release        version       nodename        machine 
+##      &quot;Windows&quot;       &quot;10 x64&quot;  &quot;build 18945&quot;      &quot;WLOG-WJ&quot;       &quot;x86-64&quot; 
+##          login           user effective_user 
+##  &quot;WitJakuczun&quot;  &quot;WitJakuczun&quot;  &quot;WitJakuczun&quot;</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">.libPaths</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;D:/Workplace/Projects/WLOGSite/trunk/wlogblog/posts/2019-08-09-reproducibility-with-r--tell-me-about-your-workflow-first/deployment/sbox&quot;
+## [2] &quot;D:/Workplace/Projects/WLOGSite/trunk/wlogblog/posts/2019-08-09-reproducibility-with-r--tell-me-about-your-workflow-first/deployment/libs&quot;
+## [3] &quot;D:/Workplace/Tools/R/R-3.6.0/library&quot;</code></pre>

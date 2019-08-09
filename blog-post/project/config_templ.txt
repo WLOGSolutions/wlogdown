@@ -1,0 +1,5 @@
+LogLevel: INFO
+author: __post_author__
+title: __post_title__
+slug: __post_slug__
+date: __post_date__

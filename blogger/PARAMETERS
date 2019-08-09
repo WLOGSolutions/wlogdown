@@ -1,0 +1,6 @@
+RSuiteVersion: 0.37.253
+RVersion: 3.6
+Project: blogger
+Repositories: MRAN[2019-08-08]
+Artifacts: config_templ.txt
+ZipVersion: 0.1

@@ -1,0 +1,121 @@
+```{r, rsuite_setup, echo=FALSE, include=FALSE}
+# Detect proper script_path (you cannot use args yet as they are build with tools in set_env.r)
+script_path <- (function() {
+  args <- commandArgs(trailingOnly = FALSE)
+  script_path <- dirname(sub("--file=", "", args[grep("--file=", args)]))
+  if (!length(script_path)) {
+    return("R")
+  }
+  if (grepl("darwin", R.version$os)) {
+    base <- gsub("~\\+~", " ", base) # on MacOS ~+~ in path denotes whitespace
+  }
+  return(normalizePath(script_path))
+})()
+
+# Setting .libPaths() to point to libs folder
+source(file.path(script_path, "set_env.R"), chdir = T)
+
+config <- load_config()
+args <- args_parser()
+```
+---
+title: `r config$title`
+author: `r config$author`
+date: `r config$date`
+slug: `r config$slug`
+categories:
+  - rsuite
+  - rstats
+tags:
+  - rsuite
+  - rstats
+  - reproducibility
+  - enterprise
+blogdown::html_page:
+    toc: true
+    toc_depth: 1
+    number_sections: true
+    fig_width: 6
+    self_contained: false
+---
+
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Load packages](#load-packages)
+    - [External packages](#external-packages)
+    - [Custom packages](#custom-packages)
+- [This is blog post template](#this-is-blog-post-template)
+    - [Call custom package](#call-custom-package)
+    - [Plot](#plot)
+    - [Extra text](#extra-text)
+    - [Emoticons](#emoticons)
+    - [Sysinfo](#sysinfo)
+
+<!-- markdown-toc end -->
+
+
+# Load packages
+
+## External packages ##
+
+```{r, libraries, include=TRUE}
+library(data.table)
+library(mgcv)
+```
+I just loaded external pkgs.
+
+## Custom packages ##
+
+```{r, custom_packages, include=TRUE}
+library(postpkg)
+```
+I just loaded custom pkg.
+
+# This is blog post template
+
+## Call custom package ##
+
+I can call a custom function `hello` from a custom pkg `postpkg`.
+
+```{r}
+postpkg::hello("World!")
+```
+
+This is an exemplary text
+
+## Plot
+```{r, simple_plot}
+plot(1:30)
+```
+
+```{r}
+plot(seq(from = -pi, to = pi, by = 0.1),
+     cos(seq(from = -pi, to = pi, by = 0.1)))
+```
+
+```{r, volcano_plot}
+image(volcano)
+```
+
+## Extra text
+
+This is extra text.
+This is another extra text.
+
+This is one more extra text.
+This is one more additional extra text.
+
+## Emoticons
+
+:smile:
+
+## Sysinfo
+
+```{r, sys_info}
+Sys.info()
+```
+
+```{r, lib_paths}
+.libPaths()
+```

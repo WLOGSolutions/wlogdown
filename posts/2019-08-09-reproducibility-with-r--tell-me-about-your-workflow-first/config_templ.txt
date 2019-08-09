@@ -1,0 +1,5 @@
+LogLevel: INFO
+author: Wit Jakuczun
+title: Reproducibility with R? Tell me about your workflow first.
+slug: reproducibility-with-r--tell-me-about-your-workflow-first
+date: 2019-08-09

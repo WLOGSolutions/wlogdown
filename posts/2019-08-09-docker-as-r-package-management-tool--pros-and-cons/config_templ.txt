@@ -1,0 +1,5 @@
+LogLevel: INFO
+author: Wit Jakuczun
+title: Docker as R package management tool? Pros and cons.
+slug: docker-as-r-package-management-tool--pros-and-cons
+date: 2019-08-09
