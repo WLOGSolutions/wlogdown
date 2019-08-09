@@ -2,7 +2,7 @@
 Reproducible blogging framework for R
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-**Table of Contents**
+## Table of Contents 
 
 - [Initialize framework](#initialize-framework)
     - [External tools](#external-tools)
