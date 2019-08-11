@@ -1,4 +1,0 @@
-Package: blogger
-Version: 0.1
-Imports: logging, callr
-File: blogger_0.1.zip
