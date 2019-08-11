@@ -70,7 +70,7 @@ I just loaded external pkgs.
 ```{r, custom_packages, include=TRUE}
 library(postpkg)
 ```
-I just loaded custom pkg.
+I just loaded custom pkg. Now I can call functions implemented in the package.
 
 # This is blog post template
 

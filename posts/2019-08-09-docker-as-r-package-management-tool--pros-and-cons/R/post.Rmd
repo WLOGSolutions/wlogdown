@@ -200,9 +200,7 @@ a Dockerfile before building the solution.
 
 # Conclusion
 
-I have presented my point of view on using Docker for R software development. I have shown that Docker is a great solution but it can be tricky when
-reproducibility is concerned. At last I have presented how R Suite makes using Docker for R development less painful.
+I have presented my point of view on using Docker for R software development. I have shown that Docker is a great solution but it can be tricky when reproducibility is concerned. At last I have presented how R Suite makes using Docker for R development less painful.
 
-
-
+Ala ma kota.
 
