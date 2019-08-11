@@ -2,7 +2,7 @@
 Reproducible blogging framework for R
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-## Table of Contents 
+**Table of Contents**
 
 - [Initialize framework](#initialize-framework)
     - [External tools](#external-tools)
@@ -10,9 +10,9 @@ Reproducible blogging framework for R
     - [Blogger tool](#blogger-tool)
 - [Using framework](#using-framework)
     - [Starting hugo](#starting-hugo)
-    - [Adding new post](#adding-new-post)	
+    - [Starting blogger daemon](#starting-blogger-daemon)
+    - [Adding new post](#adding-new-post)
     - [Editing post](#editing-post)
-        - [Start post daemon](#start-post-daemon)
         - [Adding custom images](#adding-custom-images)
 
 <!-- markdown-toc end -->
