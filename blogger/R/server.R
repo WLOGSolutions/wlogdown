@@ -21,5 +21,5 @@ posts_path <- normalizePath(file.path(script_path, "..", "..", "posts"))
 site_path <- normalizePath(file.path(script_path, "..", "..", "site"))
 
 
-blogger::update_posts(posts_path = posts_path,
-                      site_path = site_path)
+blogger::server(posts_path = posts_path,
+                site_path = site_path)

@@ -10,7 +10,7 @@ Reproducible blogging framework for R
     - [Blogger tool](#blogger-tool)
 - [Using framework](#using-framework)
     - [Starting hugo](#starting-hugo)
-    - [Adding new post](#adding-new-post)
+    - [Adding new post](#adding-new-post)	
     - [Editing post](#editing-post)
         - [Start post daemon](#start-post-daemon)
         - [Adding custom images](#adding-custom-images)
@@ -40,6 +40,7 @@ rsuite tmpl register -p blog-post
 ```
 cd blogger
 rsuite proj depsinst
+rsuite proj build
 ```
 
 ## Using framework ##
@@ -55,6 +56,15 @@ hugo server --disableFastRender -D
 
 Now you can peek your blog using link <http://localhost:1313>.
 
+### Starting blogger daemon ###
+
+`blogger` can be run in a server mode to watch for any changes you make to your posts (in folder `posts`) and moves them to hugo's site. To run the daemon use the command
+
+```
+cd blogger
+Rscript R\server.R
+```
+
 ### Adding new post ###
 
 To add a new post run the following command
@@ -68,16 +78,9 @@ It takes a while to add a new post due to dependency installation. After you are
 
 ### Editing post ###
 
-Your posts are stored in `posts` folder. Each post project is a R Suite project.
+Your posts are stored in `posts` folder. Each post project is a R Suite project. 
 
-##### Start post daemon #####
-
-Post daemon is watching any changes you make to your post and moves them to hugo's site. To run the daemon use the command
-
-```
-cd posts\<Your post>
-Rscript R\daemon.R
-```
+**Remark** it is mandatory to name post as `post.Rmd` file to have a project recognized as blog post project.
 
 #### Adding custom images ####
 

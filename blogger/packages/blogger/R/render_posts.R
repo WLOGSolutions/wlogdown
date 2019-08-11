@@ -1,3 +1,19 @@
+watch_posts <- function(posts_path, site_path) {
+    changed_posts <- find_changed_posts(posts_path)
+
+    if (length(changed_posts) > 0) {
+        pkg_loginfo("--> found %d changed posts in %s",
+                    length(changed_posts),
+                    posts_path)
+    }
+
+    render_posts(changed_posts,
+                 hugo_dir = site_path)
+
+    later::later(func = watch_posts,
+                 delay = 3)
+}
+
 render_posts <- function(changed_posts, hugo_dir) {
     for (post_rmd in changed_posts) {
         pkg_logdebug("--> rendering %s", post_rmd)
