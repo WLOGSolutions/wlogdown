@@ -10,8 +10,11 @@ watch_posts <- function(posts_path, site_path) {
     render_posts(changed_posts,
                  hugo_dir = site_path)
 
-    later::later(func = watch_posts,
-                 delay = 3)
+    later::later(func = function() {
+        watch_posts(posts_path,
+                    site_path)
+    },
+    delay = 3)
 }
 
 render_posts <- function(changed_posts, hugo_dir) {
@@ -29,8 +32,17 @@ render_post <- function(post_rmd, hugo_dir) {
     post_root_dir <- get_post_root_dir(post_rmd)
     post_cfg <- read_post_config(post_rmd)
     post_dir_name <- get_post_dir_name(post_cfg)
-    hugo_post_dir <- normalizePath(file.path(hugo_posts, post_dir_name))
+    hugo_post_dir <- normalizePath(file.path(hugo_posts, post_dir_name))    
     hugo_img_dir <- normalizePath(file.path(hugo_static, "img", post_dir_name))
+
+    if (!dir.exists(hugo_post_dir)) {
+        pkg_loginfo("--> Creating dir for post")
+        dir.create(hugo_post_dir, recursive = TRUE)
+    }
+    if (!dir.exists(hugo_img_dir)) {
+        pkg_loginfo("--> Creating dir for post's images")
+        dir.create(hugo_img_dir, recursive = TRUE)
+    }
     
     tryCatch({
         render_results <- callr::r(func = function(post_rmd, post_root_dir, post_cfg) {
