@@ -1,4 +1,0 @@
-[submodule "site/public"]
-	path = site/public
-	url = https://github.com/WitJakuczun/WitJakuczun.github.io.git
-	branch = master
