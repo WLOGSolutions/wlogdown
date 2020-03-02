@@ -1,0 +1,7 @@
+[submodule "site/public"]
+	path = site/public
+	url = https://github.com/WitJakuczun/WitJakuczun.github.io.git
+	branch = master
+[submodule "site/themes/minimal"]
+	path = site/themes/minimal
+	url = https://github.com/calintat/minimal.git
